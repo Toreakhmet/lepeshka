@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ru">
+{% load static %}
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Вкусные Лепешки & Самсы</title>
+  <link rel="icon" href="{% static 'favicon.png' %}" type="image/png">
+
+
+  <!-- Подключаем Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link rel="stylesheet" href="{% static 'home.css' %}">
+  
+  <!-- FontAwesome для иконок -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  
+  <style>
+    /* Внутренние стили для улучшения дизайна */
+    body {
+      font-family: 'Arial', sans-serif;
+      background: #f5f5f5;
+    }
+    
+    #main-header {
+      border-bottom: 5px solid orange;
+    }
+    
+    .product-gallery img {
+      border-radius: 5px;
+      transition: transform 0.5s ease;
+    }
+    
+    .product-gallery img:hover {
+      transform: scale(1.1);
+    }
+
+    .button {
+      background-color: #ff9800;
+      color: white;
+      border: none;
+      position: relative;
+      font-size: 1.5em;
+      padding: 0.6em 1em;
+      cursor: pointer;
+      transition: 800ms ease all;
+      outline: none;
+    }
+
+    .button:hover {
+      background-color: #555;
+      color: #fff;
+    }
+
+    .button:before, .button:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 2px;
+      width: 0;
+      background: #ff9800;
+      transition: 400ms ease all;
+    }
+
+    .button:after {
+      right: inherit;
+      top: inherit;
+      left: 0;
+      bottom: 0;
+    }
+
+    .button:hover:before, .button:hover:after {
+      width: 100%;
+      transition: 800ms ease all;
+    }
+  </style>
+</head>
+<body>
+
+<header id="main-header" class="py-2 bg-dark text-white text-center">
+  <div class="container">
+    <h1 class="animate__animated animate__heartBeat">Вкусные Лепешки & Самсы</h1>
+  </div>
+</header>
+
+<div class="container my-5">
+    <section id="main" class="animated">
+      <h2>Откройте для себя вкус настоящих традиционных лепешек и самс!</h2>
+      <p>Погрузитесь в мир восточной кухни с нашими непревзойденными лепешками и самсами. Приготовленные по уникальным домашним рецептам, наши блюда перенесут вас в мир изысканных вкусов и ароматов.</p>
+      <div class="info-text mb-3">
+        <p><strong>Телефон:</strong> <a href="tel:+77478395018" style="color: inherit;">+77478395018</a></p>
+      </div>
+      
+      <div class="product-gallery row">
+        <!-- Продукт 1 -->
+        <div class="product col-md-6 col-12 mb-4">
+          <img src="{% static 'Untitled.jpeg'%}" alt="Лепешка" class="img-fluid">
+          <div class="product-desc mt-2">Традиционные лепешки</div>
+        </div>
+        
+        <!-- Продукт 2 -->
+        <div class="product col-md-6 col-12 mb-4">
+          <img src="{% static 'Untitled1.jpeg'%}" alt="Самса" class="img-fluid">
+          <div class="product-desc mt-2">Непревзойденные самсы</div>
+        </div>
+      </div>
+    </section>
+
+  <section id="cta" class="text-center my-4 animate__animated animate__pulse">
+    <button class="button" onclick="window.open('https://wa.me/77478395018?text=Я%20хочу%20заказать%20лепешки%20и%20самсы!', '_blank')">Заказать в WhatsApp</button>
+  </section>
+</div>
+<!-- Секция Услуги Доставки -->
+<section id="delivery-services" class="my-5 py-5 bg-light">
+    <div class="container">
+      <!-- Заголовок секции -->
+      <h2 class="text-center mb-4">Доставка на Ваши Особые Мероприятия</h2>
+      
+      <p class="text-center">Наши вкусные лепешки и самсы идеально подходят для любого мероприятия. Мы предлагаем гибкие услуги доставки, подходящие для любой ситуации:</p>
+      
+      <div class="row mt-5">
+        <!-- Корпоративные мероприятия -->
+        <div class="col-md-4 mb-4">
+          <div class="service-box p-4 h-100">
+            <i class="fas fa-briefcase fa-3x mb-3 text-warning"></i>
+            <h4 class="service-title">Корпоративные Мероприятия</h4>
+            <p class="service-description">Добавьте изюминку в ваш корпоративный обед или вечеринку с нашими традиционными блюдами. Доставка в удобное для вас время и место.</p>
+          </div>
+        </div>
+        
+        <!-- Свадебные торжества -->
+        <div class="col-md-4 mb-4">
+          <div class="service-box p-4 h-100">
+            <i class="fas fa-ring fa-3x mb-3 text-warning"></i>
+            <h4 class="service-title">Свадебные Торжества</h4>
+            <p class="service-description">Сделайте ваше свадебное торжество незабываемым с нашими эксклюзивными кулинарными шедеврами. Мы учтем все ваши пожелания.</p>
+          </div>
+        </div>
+        
+        <!-- Доставка 24/7 -->
+        <div class="col-md-4 mb-4">
+          <div class="service-box p-4 h-100">
+            <i class="fas fa-clock fa-3x mb-3 text-warning"></i>
+            <h4 class="service-title">Доставка 24/7</h4>
+            <p class="service-description">Мы готовы удовлетворить ваши кулинарные потребности в любое время! Ночная вечеринка или ранний завтрак? Мы на связи 24/7.</p>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Кнопка для связи -->
+      <div class="text-center mt-4">
+        <a class="button btn btn-warning btn-lg" href="https://wa.me/77478395018?text=Я%20хочу%20узнать%20больше%20о%20услугах%20доставки!" target="_blank">Узнать Больше</a>
+      </div>
+    </div>
+  </section>
+  
+<!-- Подключаем JavaScript... -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+  // Индивидуальный JavaScript код, например, для анимаций или интерактивных элементов
+</script>
+
+</body>
+</html>
